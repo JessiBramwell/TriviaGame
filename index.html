@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Trivia Game</title>
+</head>
+
+<body>
+
+  <!-- Introduction -->
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Anatomy Quiz</h1>
+      <p class="lead">Choose the correct muscle from the list below.</p>
+      <hr class="my-4">
+      <div class="start">
+        <p>Press the start button to begin.</p>
+        <button id="start" class="btn btn-primary btn-lg" href="#" role="button">Start</button>
+      </div>
+      <div class="timer">
+        <h4 id="timer"></h4>
+      </div>
+    </div>
+    <!-- Start Button -->
+
+    <!-- Game Play Area -->
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <!-- Timer -->
+        <div id="timer"></div>
+        <div class="card">
+          <!-- Image -->
+          <img src="" class="card-img-top" alt="">
+          <div class="card-body">
+            <!-- Question/Feedback -->
+            <h5 class="question feedback card-title">Card title</h5>
+            <div class="input-group-sm">
+              <div class="input-group-prepend">
+                <div id="answer-options" class="input-group-text">
+                  <!-- Options **Created in js**-->
+                  <input type="radio" aria-label="Radio button for following text input">
+                </div>
+              </div>
+              <input type="text" class="form-control" aria-label="Text input with radio button">
+            </div>
+
+            <!-- Users Answer **highlight answers in js** -->
+            <!-- Correct Answer -->
+            <!-- Enter -->
+            <button href="#" id="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+
+        <!-- End Game Stats -->
+        <!-- Number Missed -->
+        <!-- Number Correct -->
+        <!-- Try Again Button -->
+      </div>
+    </div>
+  </div>
+
+
+  <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>
