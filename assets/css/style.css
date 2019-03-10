@@ -1,0 +1,13 @@
+.card,
+.stats {
+  display: none;
+}
+#timer {
+  display: inline;
+}
+
+#img {
+  height: 350px;
+  width: auto;
+  margin: 0 15%;
+}

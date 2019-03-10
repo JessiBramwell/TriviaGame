@@ -19,53 +19,47 @@
   <!-- Introduction -->
   <div class="container">
     <div class="jumbotron">
-      <h1 class="display-4">Anatomy Quiz</h1>
+      <div class="d-flex justify-content-between">
+        <h1 class="display-4 heading">Anatomy Quiz</h1>
+        <h1 class="display-4" id="timer"></h1>
+      </div>
       <p class="lead">Choose the correct muscle from the list below.</p>
       <hr class="my-4">
+      <div class="stats">
+        <h5>Correct Answers: <span id="correct"></span></h5>
+        <h5>Incorrect Answers: <span id="incorrect"></span></h5>
+      </div>
+      <!-- Try Again Button -->
       <div class="start">
         <p>Press the start button to begin.</p>
         <button id="start" class="btn btn-primary btn-lg" href="#" role="button">Start</button>
       </div>
-      <div class="timer">
-        <h4 id="timer"></h4>
-      </div>
     </div>
     <!-- Start Button -->
 
-    <!-- Game Play Area -->
-    <div class="row justify-content-center">
+    <!-- Quiz Area -->
+    <div id="quiz" class="row justify-content-center">
       <div class="col-6">
-        <!-- Timer -->
-        <div id="timer"></div>
-        <div class="card">
+        <div class="card  justify-content-center">
           <!-- Image -->
-          <img src="" class="card-img-top" alt="">
+          <img id="img" src="" class="card-img-top" alt="">
           <div class="card-body">
             <!-- Question/Feedback -->
-            <h5 class="question feedback card-title">Card title</h5>
-            <div class="input-group-sm">
-              <div class="input-group-prepend">
-                <div id="answer-options" class="input-group-text">
-                  <!-- Options **Created in js**-->
-                  <input type="radio" aria-label="Radio button for following text input">
-                </div>
-              </div>
-              <input type="text" class="form-control" aria-label="Text input with radio button">
-            </div>
-
-            <!-- Users Answer **highlight answers in js** -->
-            <!-- Correct Answer -->
-            <!-- Enter -->
-            <button href="#" id="submit" class="btn btn-primary">Submit</button>
+            <h5 class="question feedback card-title">Select the name of the highlighted muscle</h5>
+            <ul id="answer-options" class="list-group list-group-flush">
+              <!-- Options **Created in js**-->
+            </ul>
           </div>
         </div>
 
-        <!-- End Game Stats -->
-        <!-- Number Missed -->
-        <!-- Number Correct -->
-        <!-- Try Again Button -->
+        <!-- Users Answer **highlight answers in js** -->
+        <!-- Correct Answer -->
+        <!-- Enter -->
       </div>
     </div>
+
+  </div>
+  </div>
   </div>
 
 
