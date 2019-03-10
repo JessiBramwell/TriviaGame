@@ -33,7 +33,7 @@
       correct: "Longissimus"
     },
     {
-      img: "assets/images/rhomboid.png",
+      img: "assets/images/rhomboids.png",
       answers: ["Iliacus", "Tensor_Fasciae_Latae", "Rhomboids"],
       correct: "Rhomboids"
     },
