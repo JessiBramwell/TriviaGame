@@ -1,7 +1,7 @@
 (function () {
 
   // init on click
-  $("#start").on("click", init);
+  $("#start").one("click", init);
 
   // Variables to store correct and incorrect answers 
   var correct = 0;
@@ -24,17 +24,17 @@
     },
     {
       img: "assets/images/levator_scapulae.png",
-      answers: ["Levator_Scapulae", "Supraspinatus", "Transversus Abdominis"],
+      answers: ["Levator_Scapulae", "Supraspinatus", "Transversus_Abdominis"],
       correct: "Levator_Scapulae"
     },
     {
       img: "assets/images/longissimus.png",
-      answers: ["Quadratus Lumborum", "Longissimus", "Serratus Anterior"],
+      answers: ["Quadratus_Lumborum", "Longissimus", "Serratus_Anterior"],
       correct: "Longissimus"
     },
     {
       img: "assets/images/rhomboid.png",
-      answers: ["Iliacus", "Tensor Fasciae Latae", "Rhomboids"],
+      answers: ["Iliacus", "Tensor_Fasciae_Latae", "Rhomboids"],
       correct: "Rhomboids"
     },
     {
@@ -49,17 +49,17 @@
     },
     {
       img: "assets/images/trapezius.png",
-      answers: ["Quadratus Lumborum", "Trapezius", "Serratus Anterior"],
+      answers: ["Quadratus_Lumborum", "Trapezius", "Serratus_Anterior"],
       correct: "Trapezius"
     }
-
   ];
 
   function init() {
+    console.log("init")
     $(".card").show();
     $(".start").hide();
+    $(".stats").hide();
     nextQuestion();
-    select();
     timer();
   }
 
@@ -86,11 +86,12 @@
     $("#answer-options").empty();
     for (var j = 0; j < 3; j++) {
       var answer = questionsArray[i].answers[j];
+      // console.log(answer)
       var answerSpace = answer
       if (answer.includes("_")) {
         answerSpace = answer.replace(/_/g, " ");
       }
-      var el = `<li class="list-group-item" data-name=${answer}>${answerSpace}</li>`
+      var el = `<li class="list-group-item" data-name="${answer}"> ${answerSpace}</li>`
       $("#answer-options").append(el);
     }
   }
@@ -102,21 +103,25 @@
       clearInterval(intervalId);
       $("#timer").text('');
       showAnswer(name, this);
+      console.log(name)
     });
   }
 
   // Function to auto display next question
   function showAnswer(select, el) {
-    var ans = $(`*[data-name="${questionsArray[i].correct}`)
+    var ans = $(`*[data-name="${questionsArray[i].correct}`);
+    console.log(ans)
+
     if (select === questionsArray[i].correct) {
       correct++;
       $(el).addClass("list-group-item-success");
+      console.log(questionsArray[i].correct)
     } else {
       incorrect++;
       $(ans).addClass("list-group-item-primary");
       $(el).addClass("list-group-item-danger");
     }
-    setTimeout(nextQuestion, 2000);
+    setTimeout(nextQuestion, 1000);
     i++;
   }
 
@@ -135,25 +140,29 @@
 
   // Function to display stats at game end
   function endQuiz() {
-    $(".heading").text("Times Up!");
-    $(".stats").show();
     $("#correct").text(correct);
     $("#incorrect").text(incorrect);
+
+    $(".heading").text("Times Up!");
+    $(".stats").show();
+    $(".start").show();
     $(".card").hide();
-    $(".start").show()
-    $(".start > p").text("Press Start to Play Again");
-    $("#start").bind("click", function () {
+    $("#start").on("click", function () {
       reset();
       init();
-    })
+    });
   }
 
   // Function to clear and restart
   function reset() {
+    $("#correct").text("");
+    $("#incorrect").text("");
+
     correct = 0;
     incorrect = 0;
     i = 0;
+    console.log(correct + " " + incorrect + " " + i)
   }
-
+  select();
 
 })();
