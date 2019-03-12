@@ -1,12 +1,12 @@
 (function () {
 
-  // init on click
+  // Init on click
   $("#start").one("click", init);
 
   // Variables to store correct and incorrect answers 
   var correct = 0;
   var incorrect = 0;
-  var i = 0;
+  var i = 0; // questionsArray index
   var count;
   var intervalId;
 
@@ -107,7 +107,7 @@
     });
   }
 
-  // Function to auto display next question
+  // Function to auto display correct answer
   function showAnswer(select, el) {
     var ans = $(`*[data-name="${questionsArray[i].correct}`);
     console.log(ans)
